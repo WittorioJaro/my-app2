@@ -1,6 +1,7 @@
 package com.example.application.views.about;
 
 import com.example.application.views.MainLayout;
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Paragraph;
@@ -8,21 +9,26 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
+import jakarta.annotation.security.PermitAll;
+
+import java.awt.*;
 
 @PageTitle("About")
-@Route(value = "about", layout = MainLayout.class)
+@Route(value = "", layout = MainLayout.class)
+@PermitAll
 public class AboutView extends VerticalLayout {
 
     public AboutView() {
         setSpacing(false);
-
         Image img = new Image("images/empty-plant.png", "placeholder plant");
         img.setWidth("200px");
         add(img);
 
+        H1 header1 = new H1("This is an H1 header test");
         H2 header = new H2("This place intentionally left empty");
         header.addClassNames(Margin.Top.XLARGE, Margin.Bottom.MEDIUM);
         add(header);
+        add(header1);
         add(new Paragraph("It’s a place where you can grow your own UI 🤗"));
 
         setSizeFull();
