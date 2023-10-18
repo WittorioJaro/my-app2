@@ -80,6 +80,14 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.vaadin.addons.pjp</groupId>
+            <artifactId>HtmlFiveQrcodeVaadin</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-testbench-junit5</artifactId>

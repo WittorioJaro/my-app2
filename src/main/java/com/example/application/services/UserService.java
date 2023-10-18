@@ -12,26 +12,15 @@ import java.util.Optional;
 public class UserService {
 
     @Autowired
-    UserRepository ur;
+    UserRepository userRepository;
 
 
-    public String getFirstName(String id) {
-
-        User user = new User();
-
-        Optional<User> userData = ur.findById(id);
-
-        if (userData.isPresent()){
-            user = userData.get();
+    public User getUserFromDatabase(String userId) {
+        if (userRepository.findById(userId).isPresent()){
+            return userRepository.findById(userId).get();
+        } else {
+            return new User("Brak", "Uzytkownika");
         }
-        else {
-            System.out.println("NO DATA NO DATA");
-        }
-
-
-        return user.getFirstName();
-
-
 
     }
 
