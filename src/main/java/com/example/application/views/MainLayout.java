@@ -2,7 +2,7 @@ package com.example.application.views;
 
 import com.example.application.services.SecurityService;
 import com.example.application.views.about.AboutView;
-import com.example.application.views.about.MenuView;
+import com.example.application.views.menu.MenuView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.Footer;

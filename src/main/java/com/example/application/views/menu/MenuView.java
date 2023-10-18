@@ -1,8 +1,8 @@
-package com.example.application.views.about;
+package com.example.application.views.menu;
 
+import com.example.application.data.dao.UserRepository;
+import com.example.application.data.model.User;
 import com.example.application.views.MainLayout;
-import com.vaadin.flow.component.ClickEvent;
-import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Paragraph;
@@ -12,28 +12,21 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.PermitAll;
 
-
-import java.util.Optional;
-
 @PageTitle("Menu")
 @Route(value = "/menu", layout = MainLayout.class)
 @PermitAll
 public class MenuView extends VerticalLayout {
 
 
-    class CheckIdListener
-            implements ComponentEventListener<ClickEvent<Button>> {
+    UserRepository userRepository;
 
-        @Override
-        public void onComponentEvent(ClickEvent<Button> event) {
-            event.getSource()
-                    .setText("You have clicked me " + (++count) + " times");
-        }
-    }
-    public MenuView() {
+
+    public MenuView(UserRepository providedUserRepository) {
+        userRepository = providedUserRepository;
+
         Button checkId = new Button("Sprawdz Id");
         checkId.addClickListener(e -> {
-            Notification.show(us.getFirstName("55929"));
+            Notification.show(getUserFromDatabase("55929").getFirstName());
         });
 
         H1 header1 = new H1("This is MENU test");
@@ -44,6 +37,10 @@ public class MenuView extends VerticalLayout {
         setJustifyContentMode(JustifyContentMode.CENTER);
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
         getStyle().set("text-align", "center");
+    }
+
+    User getUserFromDatabase(String userId){
+        return userRepository.findById(userId).get();
     }
 
 }

@@ -24,6 +24,9 @@ public class UserService {
         if (userData.isPresent()){
             user = userData.get();
         }
+        else {
+            System.out.println("NO DATA NO DATA");
+        }
 
 
         return user.getFirstName();
