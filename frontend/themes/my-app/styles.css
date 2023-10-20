@@ -1,1 +1,52 @@
 @import url('./main-layout.css');
+
+.button-container {
+    width: 80%;
+    margin-top: 3rem;
+    justify-content: space-around;
+}
+
+.button {
+    background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%);
+    padding: 30px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    height: 5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.button:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.header-title {
+    margin-top: 3rem;
+}
+
+
+.name-surname {
+    font-size: 1rem;
+    font-weight: bolder;
+    color: #e52500;
+}
+
+.about-user {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+.user-details {
+    margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
+}

@@ -10,6 +10,7 @@ import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -31,21 +32,25 @@ public class ScanView extends VerticalLayout {
     UserService userService;
     User currentUser;
     String userId;
-    H1 hUserId;
+    Paragraph hUserId;
 
     public ScanView(UserService providedUserService) {
         userService = providedUserService;
 
-        hUserId = new H1(userId);
+        hUserId = new Paragraph(userId);
 
         Button btnCheckQrCode = new Button("Sprawdź bilet");
         btnCheckQrCode.addClickListener(e -> {
             add(createScanner());
         });
-
-        add(hUserId);
+        Paragraph nameAndSurname = new Paragraph("Imie i nazwisko:");
+        nameAndSurname.addClassName("about-user");
+        btnCheckQrCode.addClassName("button");
+        hUserId.addClassName("name-surname");
+        HorizontalLayout userDetails = new HorizontalLayout(nameAndSurname, hUserId);
+        userDetails.addClassName("user-details");
         add(btnCheckQrCode);
-
+        add(userDetails);
         setSpacing(false);
         setSizeFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
