@@ -33,12 +33,13 @@ public class ScanView extends VerticalLayout {
     User currentUser;
     String userId;
     Paragraph hUserId;
+    Paragraph puserTicket;
 
     public ScanView(UserService providedUserService) {
         userService = providedUserService;
 
         hUserId = new Paragraph(userId);
-
+        puserTicket = new Paragraph("Bilet?");
         Button btnCheckQrCode = new Button("Sprawdź bilet");
         btnCheckQrCode.addClickListener(e -> {
             add(createScanner());
@@ -51,6 +52,7 @@ public class ScanView extends VerticalLayout {
         userDetails.addClassName("user-details");
         add(btnCheckQrCode);
         add(userDetails);
+        add(puserTicket);
         setSpacing(false);
         setSizeFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
@@ -69,7 +71,13 @@ public class ScanView extends VerticalLayout {
             userId = scanner.getValue();
             currentUser = userService.getUserFromDatabase(userId);
             hUserId.setText(currentUser.getFirstName() + " " + currentUser.getLastName());
-
+            if (currentUser.getHasTicket()) {
+                puserTicket.setText("Bilet ważny");
+                puserTicket.addClassName("ticket-info-ticket");
+            } else {
+                puserTicket.setText("Brak biletu");
+                puserTicket.addClassName("ticket-info-noticket");
+            }
         }, options);
 
         return component;

@@ -23,6 +23,7 @@ public class User {
     private String firstName;
 
     private String lastName;
+    private boolean hasTicket;
 
 
     // Hibernate expects entities to have a no-arg constructor,
@@ -45,5 +46,6 @@ public class User {
     public String getLastName() {
         return this.lastName;
     }
+    public boolean getHasTicket() { return this.hasTicket;}
 
 }

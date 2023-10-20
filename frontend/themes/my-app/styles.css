@@ -50,3 +50,16 @@
     justify-content: center;
     align-items: center;
 }
+.ticket-info-ticket {
+    margin-top: 2rem;
+    font-weight: bolder;
+    font-size: 1rem;
+    color: green;
+}
+.ticket-info-noticket {
+    margin-top: 2rem;
+    font-weight: bolder;
+    font-size: 1rem;
+    color: red;
+}
+
