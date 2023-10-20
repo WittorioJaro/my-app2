@@ -23,12 +23,5 @@ public class UserService {
         }
 
     }
-    public boolean checkUserTicket(String userId) {
-        if (userRepository.findById(userId).isPresent()){
-            return userRepository.findById(userId).get().getHasTicket();
-        } else {
-            return false;
-        }
-    }
 
 }
