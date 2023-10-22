@@ -3,6 +3,7 @@ package com.example.application.views;
 import com.example.application.services.SecurityService;
 import com.example.application.views.about.AboutView;
 import com.example.application.views.menu.MenuView;
+import com.example.application.views.onsitetickets.OnSiteTicketsView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.Footer;
@@ -57,6 +58,8 @@ public class MainLayout extends AppLayout {
 
         nav.addItem(new SideNavItem("About", AboutView.class, LineAwesomeIcon.FILE.create()));
         nav.addItem(new SideNavItem("Menu", MenuView.class, LineAwesomeIcon.FILE.create()));
+        nav.addItem(new SideNavItem("On-site Tickets", OnSiteTicketsView.class, LineAwesomeIcon.FILE.create()));
+
         return nav;
     }
 
