@@ -27,6 +27,28 @@
     text-decoration: none;
 }
 
+.button-small {
+    background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%);
+    padding: 10px 25px;
+    text-align: center;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    height: 3rem;
+    width: 8rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    background-size: 200% auto;
+    color: white;
+    transition: 0.5s;
+    margin-top: 3rem;
+
+}
+.button-small:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
 
 .header-title {
     margin-top: 3rem;
@@ -62,4 +84,10 @@
     font-size: 1rem;
     color: red;
 }
+
+.ticket-header {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
 

@@ -23,5 +23,19 @@ public class UserService {
         }
 
     }
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    public void updateUserTicket(String userId, boolean hasTicket) {
+        if (userRepository.findById(userId).isPresent()) {
+            User updatedUser = userRepository.findById(userId).get();
+            updatedUser.setHasTicket(hasTicket);
+            userRepository.save(updatedUser);
+        }
+
+
+
+    }
 
 }

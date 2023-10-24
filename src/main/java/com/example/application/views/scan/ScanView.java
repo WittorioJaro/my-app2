@@ -37,7 +37,7 @@ public class ScanView extends VerticalLayout {
 
     public ScanView(UserService providedUserService) {
         userService = providedUserService;
-
+        
         hUserId = new Paragraph(userId);
         puserTicket = new Paragraph("Bilet?");
         Button btnCheckQrCode = new Button("Sprawdź bilet");

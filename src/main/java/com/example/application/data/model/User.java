@@ -20,15 +20,43 @@ public class User {
     @Id
     private String id;
 
+
     private String firstName;
 
     private String lastName;
+    private String email;
+    private String userClass;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String ticketId;
+    private String accessCode;
+    private String balance;
+
     private boolean hasTicket;
 
 
     // Hibernate expects entities to have a no-arg constructor,
     // though it does not necessarily have to be public.
     public User() {}
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getUserClass() {
+        return userClass;
+    }
+
+    public String getTicketId() {
+        return ticketId;
+    }
+
+    public String getAccessCode() {
+        return accessCode;
+    }
+
+    public String getBalance() {
+        return balance;
+    }
 
     public User(String firstName, String lastName) {
         this.firstName = firstName;
@@ -48,4 +76,7 @@ public class User {
     }
     public boolean getHasTicket() { return this.hasTicket;}
 
+    public void setHasTicket(boolean hasTicket) {
+        this.hasTicket = hasTicket;
+    }
 }
