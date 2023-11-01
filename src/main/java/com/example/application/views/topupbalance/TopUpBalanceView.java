@@ -84,7 +84,7 @@ public class TopUpBalanceView extends VerticalLayout {
             userId = scanner.getValue();
             currentUser = userService.getUserFromDatabase(userId);
             userData.setText("Imie i nazwisko: " + currentUser.getFirstName() + " " + currentUser.getLastName());
-            currentBalance = currentUser.getBalance(); // Assuming you have a getBalance() method in your User class
+            currentBalance = currentUser.getBalance();
         }, options);
 
         return component;

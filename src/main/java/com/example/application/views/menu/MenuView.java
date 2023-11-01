@@ -47,10 +47,21 @@ public class MenuView extends VerticalLayout {
                 btnTopUp.getUI().ifPresent(ui ->
                         ui.navigate("topupbalance"))
         );
+
+        Button btnCafeteria = new Button("Kawiarenka");
+        btnCafeteria.addClickListener(e -> {
+            btnCafeteria.getUI().ifPresent(ui -> {
+                ui.navigate("cafeteria");
+            });
+        });
+
+        btnCafeteria.addClassName("button");
         btnTopUp.addClassName("button");
         HorizontalLayout buttonContainer = new HorizontalLayout(btnScanCode, btnTopUp);
-        VerticalLayout parentContainer = new VerticalLayout(header1, buttonContainer);
+        HorizontalLayout buttonContainer2 = new HorizontalLayout(btnCafeteria);
+        VerticalLayout parentContainer = new VerticalLayout(header1, buttonContainer, buttonContainer2);
         buttonContainer.addClassName("button-container");
+        buttonContainer2.addClassName("button-container");
         parentContainer.setAlignItems(Alignment.CENTER);
         parentContainer.setHeightFull();
 
