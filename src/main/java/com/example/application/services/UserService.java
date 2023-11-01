@@ -33,9 +33,15 @@ public class UserService {
             updatedUser.setHasTicket(hasTicket);
             userRepository.save(updatedUser);
         }
-
-
-
     }
+
+    public void updateUserBalance(String userId, int balance) {
+        if (userRepository.findById(userId).isPresent()) {
+            User updatedUser = userRepository.findById(userId).get();
+            updatedUser.setBalance(balance);
+            userRepository.save(updatedUser);
+        }
+    }
+
 
 }

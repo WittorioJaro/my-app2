@@ -29,7 +29,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String ticketId;
     private String accessCode;
-    private String balance;
+    private int balance;
 
     private boolean hasTicket;
 
@@ -54,7 +54,7 @@ public class User {
         return accessCode;
     }
 
-    public String getBalance() {
+    public int getBalance() {
         return balance;
     }
 
@@ -79,4 +79,6 @@ public class User {
     public void setHasTicket(boolean hasTicket) {
         this.hasTicket = hasTicket;
     }
+
+    public void setBalance(int balance) { this.balance = balance; }
 }

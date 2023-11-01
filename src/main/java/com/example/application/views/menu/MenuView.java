@@ -42,9 +42,13 @@ public class MenuView extends VerticalLayout {
         btnScanCode.addClassName("button");
         H1 header1 = new H1("Last Dance Panel");
         header1.addClassName("header-title");
-        Button btnDoNothing = new Button("Nic nie robie");
-        btnDoNothing.addClassName("button");
-        HorizontalLayout buttonContainer = new HorizontalLayout(btnScanCode, btnDoNothing);
+        Button btnTopUp = new Button("Wpłaty na miejscu");
+        btnTopUp.addClickListener(e ->
+                btnTopUp.getUI().ifPresent(ui ->
+                        ui.navigate("topupbalance"))
+        );
+        btnTopUp.addClassName("button");
+        HorizontalLayout buttonContainer = new HorizontalLayout(btnScanCode, btnTopUp);
         VerticalLayout parentContainer = new VerticalLayout(header1, buttonContainer);
         buttonContainer.addClassName("button-container");
         parentContainer.setAlignItems(Alignment.CENTER);

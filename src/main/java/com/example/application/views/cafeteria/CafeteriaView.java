@@ -10,5 +10,14 @@ import jakarta.annotation.security.PermitAll;
 @Route(value = "/cafeteria", layout = MainLayout.class)
 @PermitAll
 public class CafeteriaView extends VerticalLayout {
+    public CafeteriaView() {
 
+
+
+
+        setSizeFull();
+        setJustifyContentMode(JustifyContentMode.CENTER);
+        setDefaultHorizontalComponentAlignment(Alignment.CENTER);
+        getStyle().set("text-align", "center");
+    }
 }
